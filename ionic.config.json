@@ -1,0 +1,7 @@
+{
+  "name": "MyGameLibrary",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
