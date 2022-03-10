@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="registrar()" autocomplete="off" [formGroup]="miFormulario">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+      <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+        nombre
+      </span>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+      <span class="form-text text-danger" *ngIf="campoEsValido('email')">
+        correo
+      </span>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+      <span class="form-text text-danger" *ngIf="campoEsValido('password')">
+        contraseña
+      </span>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block" [disabled]="miFormulario.invalid">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <ion-icon name="arrow-undo-outline" [routerLink]="['']"></ion-icon>
+</ion-content>

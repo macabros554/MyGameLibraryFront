@@ -1,20 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content class="auth-form">
+  <ion-grid>
+    <ion-row>
+      <ion-col align-self-center class="text-center">
+        <ion-button [routerLink]="['/registrar']" expand="block" color="primary">Registrarse</ion-button>
+        <span class="divider line one-line">or</span>
+        <ion-button [routerLink]="['/login']" expand="block" color="primary">Login</ion-button>
+        <span class="divider line one-line">or</span>
+        <ion-button [routerLink]="['/lista-juegos']" expand="block" color="primary">Ver Juegos</ion-button>
+        <span class="divider line one-line">or</span>
+        <ion-button [routerLink]="['/opciones-juego']" expand="block" color="primary">Añadir Juego</ion-button>
+        <span class="divider line one-line">or</span>
+        <ion-button [routerLink]="['/favoritos']" expand="block" color="primary">Lista favoritos usuario</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

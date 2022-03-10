@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="logear()" autocomplete="off" [formGroup]="miFormulario">
+    <ion-item lines="full">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" class="primary" expand="block" [disabled]="miFormulario.invalid">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <ion-icon name="arrow-undo-outline" [routerLink]="['']"></ion-icon>
+</ion-content>

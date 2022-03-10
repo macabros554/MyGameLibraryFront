@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="espera" class="row gx-0">
+
+  <ion-row>
+    <ion-card *ngFor="let juegito of listaDeJuegos" [routerLink]="['/juego',juegito.id]" class="col-2">
+      <img src="{{juegito.imagen}}"/>
+      <ion-card-header>
+        <ion-card-title>{{juegito.nombre}}</ion-card-title>
+        <ion-card-subtitle>Genero: {{juegito.genero}}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{juegito.precio}}
+      </ion-card-content>
+    </ion-card>
+
+  </ion-row>
+  <ion-icon name="arrow-undo-outline" [routerLink]="['']"></ion-icon>
+
+</ion-content>

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>juego</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngIf="espera" class="row gx-0 col-12">
+    <div class="col-2">
+      <img src="{{juego.imagen}}" />
+    </div>
+    <div class="col-10">
+      <ion-card-header>
+        <div class="row gx-0">
+          <div class="col-11">
+            <ion-card-title >{{juego.nombre}}</ion-card-title>
+          </div>
+          <div class="col-1">
+            <ion-icon  *ngIf="!estrella" name="star-outline" (click)="anadirFavorito(juego.id)"></ion-icon>
+            <ion-icon *ngIf="estrella" name="star" (click)="borrarFavorito(juego.id)"></ion-icon>
+          </div>
+        </div>
+      <ion-card-subtitle>Genero: {{juego.genero}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{juego.descripcion}}</p>
+
+        <p>{{juego.precio}}</p>
+      </ion-card-content>
+    </div>
+    <ion-icon name="arrow-undo-outline" [routerLink]="['']"></ion-icon>
+
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>opcionesJuego</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="enviarJuego()" autocomplete="off" [formGroup]="juego">
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input type="text" formControlName="nombre"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Genero</ion-label>
+      <ion-input type="text" formControlName="genero"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Precio</ion-label>
+      <ion-input type="text" formControlName="precio"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Imagen</ion-label>
+      <ion-input type="text" formControlName="imagen"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input type="text" formControlName="descripcion"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="primary" expand="block">Enviar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+  <ion-icon name="arrow-undo-outline" [routerLink]="['']"></ion-icon>
+
+</ion-content>
