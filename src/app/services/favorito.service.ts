@@ -27,7 +27,7 @@ export class FavoritoService {
   });
 
   this.listaFavoritos.forEach(favorito => {
-    if(favorito.idJuego==idJuegoid){
+    if(favorito.idJuego.id==idJuegoid){
       if(favorito.idUsuario=idUsuarioid){
         return existe=true;
       }
@@ -42,7 +42,7 @@ export class FavoritoService {
     return collectionData(juegosLira, { idField: 'id'}) as Observable<juegoFavoritoConId[]>;
   }
 
-  anadirFavorito(idJuegoid:string){
+  anadirFavorito(idJuegoid:juegoConId){
     let idUsuarioid=localStorage.getItem('uid');
     let favoritos={
       idJuego:idJuegoid,
@@ -64,7 +64,7 @@ export class FavoritoService {
   });
 
   this.listaFavoritos.forEach(favorito => {
-    if(favorito.idJuego==idJuegoid){
+    if(favorito.idJuego.id==idJuegoid){
       if(favorito.idUsuario=idUsuarioid){
         borrarJuegoid=favorito.id;
       }

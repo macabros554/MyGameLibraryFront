@@ -7,15 +7,15 @@
 <ion-content *ngIf="espera" class="row gx-0">
 
   <ion-row>
-    <ion-card *ngFor="let juegito of listaDeJuegos" [routerLink]="['/juego',juegito.id]" class="col-2">
-      <img src="{{juegito.imagen}}"/>
+    <ion-card *ngFor="let juegito of listaDeFavoritos" [routerLink]="['/juego',juegito.idJuego.id]" class="col-2">
+      <img src="{{juegito.idJuego.imagen}}"/>
       <ion-card-header>
-        <ion-card-title>{{juegito.nombre}}</ion-card-title>
-        <ion-card-subtitle>Genero: {{juegito.genero}}</ion-card-subtitle>
+        <ion-card-title>{{juegito.idJuego.nombre}}</ion-card-title>
+        <ion-card-subtitle>Genero: {{juegito.idJuego.genero}}</ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
-        {{juegito.precio}}
+        {{juegito.idJuego.precio}}
       </ion-card-content>
     </ion-card>
 
